@@ -68,12 +68,18 @@
 
         if (this.config.location) {
             this.cityTop.show();
+            this.locationCity.html(this.config.location)
             this.location.append(this.locationCity);
             this.cityTop.append(this.location);
         }
 
         if (this.config.hotCity) {
             this.cityTop.show();
+            var l = ''
+            this.config.hotCity.forEach(function (el) {  
+                l += '<li>' + el + '</li>'
+            })
+            this.hotCity.find('ul').html(l)
             this.cityTop.append(this.hotCity);
         }
 
